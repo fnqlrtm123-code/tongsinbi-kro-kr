@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://통신비환급금조회.kro.kr/sitemap.xml
