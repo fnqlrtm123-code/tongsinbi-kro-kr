@@ -3,19 +3,15 @@
 import React from 'react';
 import Link from 'next/link';
 import { Search } from 'lucide-react';
-import LiveStatsTicker from './LiveStatsTicker';
 
 const TARGET_URL = 'https://a.mrbrisbaneinsouth.kr/1228/';
 
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
-      {/* Live Stats Ticker */}
-      <LiveStatsTicker />
-
       {/* Main Header Bar */}
       <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
-        {/* Logo Section (NO kro.kr, NO English) */}
+        {/* Logo Section */}
         <Link href="/" className="flex items-center gap-2 group">
           <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-black text-xs shadow-sm">
             통신
