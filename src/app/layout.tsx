@@ -6,32 +6,33 @@ import Footer from '@/components/Footer';
 export const metadata: Metadata = {
   metadataBase: new URL('https://통신비환급금조회.kro.kr'),
   title: {
-    default: '통신비 환급금 조회 - 스마트초이스 미환급금·SKT·KT·LGU+ 1분 환급 신청',
+    default: '통신비 환급금 조회 | 미환급 통신비 1분 통합조회 센터 (kro.kr)',
     template: '%s | 통신비환급금조회.kro.kr',
   },
   description:
-    '통신비 미환급금 조회 및 환급 신청 종합 가이드. SKT, KT, LGU+, 알뜰폰 해지 후 과오납금, 단말기 보증금, 스마트초이스 미환급금 1분 자동 조회 및 계좌 입금 방법 안내.',
+    '통신비 미환급금 조회 및 환급 신청 종합 안내 포털. SKT, KT, LGU+, 알뜰폰 해지 후 이중납부 요금, 단말기 보증금, 과오납금 스마트초이스 1분 자동 조회 및 본인 계좌 환급 방법 안내.',
   keywords: [
     '통신비환급금조회',
     '통신비 미환급금',
+    '미환급 통신비 조회',
     '스마트초이스',
     '통신비 환급금 신청',
-    'SKT 통신비 환급',
+    'SKT 통신비 환급금',
     'KT 통신비 미환급금',
-    'LGU+ 통신비 환급',
+    'LGU+ 통신비 환급금',
     '알뜰폰 미환급금',
     '방송통신위원회 통신비',
     '통신비 요금감면',
     '통신비 이중납부 환급',
   ],
-  authors: [{ name: '통신비미환급금조회 포털 안내센터' }],
-  creator: '통신비미환급금조회 포털 안내센터',
-  publisher: '통신비미환급금조회 포털 안내센터',
+  authors: [{ name: '통신비미환급금조회 포털 센터' }],
+  creator: '통신비미환급금조회 포털 센터',
+  publisher: '통신비미환급금조회 포털 센터',
   formatDetection: {
     telephone: true,
   },
   openGraph: {
-    title: '통신비 환급금 조회 - 스마트초이스 미환급금 1분 신청',
+    title: '통신비 환급금 조회 | 미환급 통신비 1분 통합조회 센터',
     description:
       'SKT, KT, LGU+, 알뜰폰 미환급금, 이중납부 요금, 단말기 보증금 환급 신청 및 복지 감면 혜택 통합 안내.',
     url: 'https://통신비환급금조회.kro.kr',
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: '통신비 미환급금 조회 포털',
+        alt: '통신비 미환급금 조회 포털 센터',
       },
     ],
     locale: 'ko_KR',
@@ -74,24 +75,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // JSON-LD Structured Data
+  // JSON-LD Structured Data for Naver / Google / Bing Search Engine Optimization
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'GovernmentService',
-    name: '통신비 미환급금 통합 조회 및 신청 서비스',
-    serviceType: 'Telecommunications Refund & Fee Reduction Information',
-    provider: {
-      '@type': 'Organization',
-      name: '스마트초이스 (KTOA) 연동 안내 센터',
-      url: 'https://통신비환급금조회.kro.kr',
-      sameAs: ['https://www.smartchoice.or.kr'],
-    },
-    areaServed: {
-      '@type': 'Country',
-      name: 'South Korea',
-    },
+    '@type': 'WebSite',
+    name: '통신비 미환급금 통합 조회 안내 센터',
+    url: 'https://통신비환급금조회.kro.kr',
     description:
       '통신비 이중납부 과오납금, 단말기 미반환 보증금, 스마트초이스 미환급금 1분 조회 및 복지 요금감면 통합 안내',
+    publisher: {
+      '@type': 'Organization',
+      name: '통신비미환급금조회 포털 센터',
+      url: 'https://통신비환급금조회.kro.kr',
+    },
   };
 
   return (
@@ -102,7 +98,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col antialiased">
+      <body className="min-h-screen flex flex-col bg-slate-900 text-slate-100 antialiased selection:bg-blue-500 selection:text-white">
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />

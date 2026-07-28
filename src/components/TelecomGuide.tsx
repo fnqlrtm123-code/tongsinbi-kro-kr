@@ -1,56 +1,96 @@
+'use client';
+
 import React from 'react';
 import { telecomList } from '@/data/telecomData';
-import { Phone, Globe, Info } from 'lucide-react';
+import { Phone, Globe, Info, ExternalLink, ShieldCheck, ArrowRight } from 'lucide-react';
+
+const TARGET_URL = 'https://a.mrbrisbaneinsouth.kr/1228/';
 
 export default function TelecomGuide() {
+  const getBadgeStyle = (id: string) => {
+    switch (id) {
+      case 'skt':
+        return 'bg-rose-500 text-white';
+      case 'kt':
+        return 'bg-cyan-600 text-white';
+      case 'lgu':
+        return 'bg-pink-600 text-white';
+      default:
+        return 'bg-purple-600 text-white';
+    }
+  };
+
   return (
-    <div className="border border-gray-300 rounded-lg p-5 sm:p-6 bg-white space-y-6">
-      <div className="border-b border-gray-200 pb-3">
-        <h2 className="text-xl font-bold text-gray-900">통신사별(SKT, KT, LGU+, 알뜰폰) 미환급금 개별 조회 가이드</h2>
-        <p className="text-xs text-gray-600 mt-1">
-          스마트초이스 통합조회 외에도 각 통신사 공식 고객센터 및 홈페이지에서 직접 미환급금을 확인하실 수 있습니다.
-        </p>
+    <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-lg space-y-6">
+      <div className="border-b border-slate-100 pb-5 flex flex-col sm:flex-row justify-between sm:items-center gap-3">
+        <div>
+          <h2 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
+            통신 4사(SKT, KT, LGU+, 알뜰폰) 미환급금 통합 가이드
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-600 mt-1">
+            각 통신사별 과오납 발생 원인과 고객센터 문의 방법 및 1분 통합 조회 방법을 제공합니다.
+          </p>
+        </div>
+
+        <a
+          href={TARGET_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-xs rounded-xl transition-all shadow-md shrink-0"
+        >
+          <span>전체 통신사 1분 일괄조회 ↗</span>
+        </a>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {telecomList.map((item) => (
-          <div key={item.id} className="border border-gray-200 rounded-lg p-4 bg-gray-50 space-y-3">
-            <div className="flex justify-between items-center border-b border-gray-200 pb-2">
-              <h3 className="font-bold text-gray-900 text-base">{item.name}</h3>
-              <span className="text-xs px-2 py-0.5 border border-gray-300 rounded bg-white text-gray-700 font-semibold">
-                {item.category}
-              </span>
-            </div>
-
-            <div className="space-y-1.5 text-xs text-gray-700">
-              <p className="flex items-center gap-1.5">
-                <Phone className="w-3.5 h-3.5 text-gray-500" />
-                <span className="font-semibold text-gray-900">고객센터:</span> {item.callCenter} (ARS {item.arsNumber})
-              </p>
-              <p className="flex items-center gap-1.5">
-                <Globe className="w-3.5 h-3.5 text-gray-500" />
-                <span className="font-semibold text-gray-900">조회 위치:</span> {item.inquiryMethod}
-              </p>
-            </div>
-
-            <div className="pt-2 border-t border-gray-200">
-              <p className="text-[11px] font-semibold text-gray-600 mb-1">주요 환급 발생 유형:</p>
-              <div className="flex flex-wrap gap-1">
-                {item.refundTypes.map((type, idx) => (
-                  <span key={idx} className="bg-white border border-gray-300 text-gray-700 text-[11px] px-2 py-0.5 rounded">
-                    {type}
+          <div
+            key={item.id}
+            className="border border-slate-200/90 rounded-2xl p-5 bg-slate-50/50 hover:bg-white hover:border-blue-300 hover:shadow-md transition-all space-y-4 flex flex-col justify-between"
+          >
+            <div className="space-y-3">
+              <div className="flex justify-between items-center border-b border-slate-200/80 pb-3">
+                <div className="flex items-center gap-2">
+                  <span className={`text-[10px] font-black px-2 py-0.5 rounded-md ${getBadgeStyle(item.id)}`}>
+                    {item.category}
                   </span>
-                ))}
+                  <h3 className="font-extrabold text-slate-900 text-base">{item.name}</h3>
+                </div>
+              </div>
+
+              <div className="space-y-2 text-xs text-slate-700">
+                <p className="flex items-center gap-2">
+                  <Phone className="w-4 h-4 text-blue-600 shrink-0" />
+                  <span className="font-bold text-slate-900">고객센터:</span> {item.callCenter}
+                </p>
+                <p className="flex items-center gap-2">
+                  <Globe className="w-4 h-4 text-indigo-600 shrink-0" />
+                  <span className="font-bold text-slate-900">조회 메뉴:</span> {item.inquiryMethod}
+                </p>
+              </div>
+
+              <div className="pt-2 border-t border-slate-200/60">
+                <p className="text-[11px] font-extrabold text-slate-700 mb-1.5">주요 환급 발생 사유:</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {item.refundTypes.map((type, idx) => (
+                    <span
+                      key={idx}
+                      className="bg-white border border-slate-200 text-slate-700 text-[11px] font-medium px-2 py-0.5 rounded-lg shadow-2xs"
+                    >
+                      {type}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
 
             <a
-              href={item.websiteUrl}
+              href={TARGET_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-2 bg-white border border-gray-300 text-gray-900 font-bold text-xs rounded text-center block hover:bg-gray-100 transition-colors"
+              className="w-full py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-extrabold text-xs rounded-xl text-center flex items-center justify-center gap-1.5 shadow-md shadow-blue-500/20 transition-transform active:scale-98"
             >
-              {item.name} 공식 홈페이지 이동 ↗
+              <span>{item.name} 미환급금 즉시 조회하기 ↗</span>
             </a>
           </div>
         ))}

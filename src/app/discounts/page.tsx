@@ -1,24 +1,49 @@
 import React from 'react';
 import DiscountsGuide from '@/components/DiscountsGuide';
+import FloatingMobileCta from '@/components/FloatingMobileCta';
 import { Metadata } from 'next';
+import { Sparkles } from 'lucide-react';
+
+const TARGET_URL = 'https://a.mrbrisbaneinsouth.kr/1228/';
 
 export const metadata: Metadata = {
-  title: '통신비 복지 요금감면 대상자 및 혜택 신청 가이드',
+  title: '통신비 복지 요금 감면 자격 및 혜택 신청 방법 (월 최대 33,500원)',
   description:
-    '기초생활수급자, 차상위계층, 장애인, 국가유공자, 만 65세 이상 기초연금수급자 통신비 요금감면(월 최대 33,500원 할인) 대상자 및 114 간편 신청방법.',
+    '기초생활수급자, 차상위계층, 장애인, 국가유공자, 기초연금수급자 어르신 대상 월 최대 33,500원 통신비 감면 복지 혜택 신청 방법 안내.',
 };
 
 export default function DiscountsPage() {
   return (
-    <div className="max-w-5xl mx-auto px-4 py-8 space-y-8 text-gray-900">
-      <div className="border-b border-gray-300 pb-4">
-        <h1 className="text-2xl font-extrabold text-gray-900">통신비 복지 요금감면 혜택 안내</h1>
-        <p className="text-sm text-gray-600 mt-1">
-          정부 복지 혜택에 따른 월 통신비 요금 감면 신청 자격과 할인 금액을 확인하세요.
-        </p>
+    <div className="bg-slate-900 min-h-screen text-slate-100 py-10 px-4 space-y-8 pb-20 lg:pb-10">
+      <div className="max-w-5xl mx-auto space-y-8">
+        <div className="bg-gradient-to-r from-slate-950 via-slate-900 to-indigo-950 border border-slate-800 rounded-3xl p-6 sm:p-8 space-y-4 shadow-xl">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold border border-emerald-500/30">
+            <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+            <span>정부 감면 복지 혜택</span>
+          </div>
+          <h1 className="text-2xl sm:text-4xl font-black text-white">
+            통신비 복지 요금 감면 대상자 및 혜택 가이드
+          </h1>
+          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-3xl">
+            환급금 신청 외에도 대상에 해당하시는 경우 매월 납부하는 통신비를 최대 33,500원까지 차감해드리는 요금 감면 제도입니다.
+          </p>
+
+          <div className="pt-2">
+            <a
+              href={TARGET_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-slate-950 font-black text-sm rounded-xl shadow-lg transition-transform hover:scale-105"
+            >
+              <span>요금 감면자격 1분 확인 ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <DiscountsGuide />
       </div>
 
-      <DiscountsGuide />
+      <FloatingMobileCta />
     </div>
   );
 }
