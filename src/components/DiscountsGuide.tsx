@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { HeartHandshake, CheckCircle2, ArrowRight, Sparkles, Gift } from 'lucide-react';
+import { CheckCircle2, Sparkles, Gift } from 'lucide-react';
 
 const TARGET_URL = 'https://a.mrbrisbaneinsouth.kr/1228/';
 
@@ -40,11 +40,11 @@ export default function DiscountsGuide() {
   ];
 
   return (
-    <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-lg space-y-6">
-      <div className="border-b border-slate-100 pb-5 flex flex-col sm:flex-row justify-between sm:items-center gap-3">
+    <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-md space-y-6">
+      <div className="border-b border-slate-100 pb-4 flex flex-col sm:flex-row justify-between sm:items-center gap-3">
         <div>
           <div className="flex items-center gap-2">
-            <span className="bg-emerald-100 text-emerald-800 text-xs font-black px-2.5 py-0.5 rounded-full">
+            <span className="bg-emerald-100 text-emerald-800 text-xs font-bold px-2.5 py-0.5 rounded-full">
               월 최대 33,500원 할인
             </span>
             <h2 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight flex items-center gap-2">
@@ -61,9 +61,9 @@ export default function DiscountsGuide() {
           href={TARGET_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs rounded-xl transition-all shadow-md shadow-emerald-500/20 shrink-0"
+          className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs rounded-lg transition-all shadow-sm shrink-0"
         >
-          <Sparkles className="w-4 h-4 text-amber-300" />
+          <Sparkles className="w-4 h-4 text-yellow-300" />
           <span>감면자격 1분 확인 ↗</span>
         </a>
       </div>
@@ -72,11 +72,11 @@ export default function DiscountsGuide() {
         {discountList.map((item, idx) => (
           <div
             key={idx}
-            className="border border-slate-200/90 rounded-2xl p-4 sm:p-5 bg-slate-50/50 hover:bg-white hover:border-emerald-300 transition-all flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3"
+            className="border border-slate-200 rounded-xl p-4 sm:p-5 bg-slate-50 hover:bg-white hover:border-emerald-300 transition-all flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3"
           >
             <div className="space-y-1.5">
               <div className="flex items-center gap-2">
-                <span className="bg-slate-900 text-white text-[10px] font-black px-2 py-0.5 rounded-md">
+                <span className="bg-slate-900 text-white text-[10px] font-bold px-2 py-0.5 rounded">
                   {item.tag}
                 </span>
                 <h4 className="font-extrabold text-slate-900 text-sm">{item.target}</h4>
@@ -92,7 +92,7 @@ export default function DiscountsGuide() {
               href={TARGET_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs rounded-xl shrink-0 transition-colors"
+              className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-lg shrink-0 transition-colors shadow-sm"
             >
               혜택 신청 ↗
             </a>

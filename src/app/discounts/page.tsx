@@ -14,17 +14,17 @@ export const metadata: Metadata = {
 
 export default function DiscountsPage() {
   return (
-    <div className="bg-slate-900 min-h-screen text-slate-100 py-10 px-4 space-y-8 pb-20 lg:pb-10">
-      <div className="max-w-5xl mx-auto space-y-8">
-        <div className="bg-gradient-to-r from-slate-950 via-slate-900 to-indigo-950 border border-slate-800 rounded-3xl p-6 sm:p-8 space-y-4 shadow-xl">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold border border-emerald-500/30">
-            <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+    <div className="bg-white min-h-screen text-slate-900 py-8 px-4 space-y-8 pb-20 lg:pb-10">
+      <div className="max-w-4xl mx-auto space-y-8">
+        <div className="bg-emerald-50 border border-emerald-100 rounded-2xl p-6 sm:p-8 space-y-3 shadow-xs">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-600 text-white text-xs font-bold">
+            <Sparkles className="w-3.5 h-3.5 text-yellow-300" />
             <span>정부 감면 복지 혜택</span>
           </div>
-          <h1 className="text-2xl sm:text-4xl font-black text-white">
+          <h1 className="text-2xl sm:text-4xl font-black text-slate-900">
             통신비 복지 요금 감면 대상자 및 혜택 가이드
           </h1>
-          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-3xl">
+          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-3xl">
             환급금 신청 외에도 대상에 해당하시는 경우 매월 납부하는 통신비를 최대 33,500원까지 차감해드리는 요금 감면 제도입니다.
           </p>
 
@@ -33,7 +33,7 @@ export default function DiscountsPage() {
               href={TARGET_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-slate-950 font-black text-sm rounded-xl shadow-lg transition-transform hover:scale-105"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm rounded-xl shadow-md transition-transform hover:scale-105"
             >
               <span>요금 감면자격 1분 확인 ↗</span>
             </a>

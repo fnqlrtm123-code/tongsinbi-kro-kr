@@ -6,11 +6,11 @@ import Footer from '@/components/Footer';
 export const metadata: Metadata = {
   metadataBase: new URL('https://통신비환급금조회.kro.kr'),
   title: {
-    default: '통신비 환급금 조회 | 미환급 통신비 1분 통합조회 센터 (kro.kr)',
-    template: '%s | 통신비환급금조회.kro.kr',
+    default: '통신비 환급금 조회 | 미환급 통신비 1분 통합조회 센터',
+    template: '%s | 통신비환급금조회',
   },
   description:
-    '통신비 미환급금 조회 및 환급 신청 종합 안내 포털. SKT, KT, LGU+, 알뜰폰 해지 후 이중납부 요금, 단말기 보증금, 과오납금 스마트초이스 1분 자동 조회 및 본인 계좌 환급 방법 안내.',
+    '통신비 미환급금 조회 및 환급 신청 종합 안내 포털. SKT, KT, LGU+, 알뜰폰 해지 후 이중납부 요금, 단말기 보증금, 과오납금 1분 자동 조회 및 본인 계좌 환급 방법 안내.',
   keywords: [
     '통신비환급금조회',
     '통신비 미환급금',
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
     '통신비 요금감면',
     '통신비 이중납부 환급',
   ],
-  authors: [{ name: '통신비미환급금조회 포털 센터' }],
-  creator: '통신비미환급금조회 포털 센터',
-  publisher: '통신비미환급금조회 포털 센터',
+  authors: [{ name: '통신비미환급금조회 포털 안내센터' }],
+  creator: '통신비미환급금조회 포털 안내센터',
+  publisher: '통신비미환급금조회 포털 안내센터',
   formatDetection: {
     telephone: true,
   },
@@ -75,7 +75,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // JSON-LD Structured Data for Naver / Google / Bing Search Engine Optimization
+  // JSON-LD Structured Data for Naver / Bing SEO
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
@@ -86,7 +86,6 @@ export default function RootLayout({
     publisher: {
       '@type': 'Organization',
       name: '통신비미환급금조회 포털 센터',
-      url: 'https://통신비환급금조회.kro.kr',
     },
   };
 
@@ -98,7 +97,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-slate-900 text-slate-100 antialiased selection:bg-blue-500 selection:text-white">
+      <body className="min-h-screen flex flex-col bg-white text-slate-900 antialiased selection:bg-blue-600 selection:text-white">
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />

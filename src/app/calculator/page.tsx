@@ -14,17 +14,17 @@ export const metadata: Metadata = {
 
 export default function CalculatorPage() {
   return (
-    <div className="bg-slate-900 min-h-screen text-slate-100 py-10 px-4 space-y-8 pb-20 lg:pb-10">
-      <div className="max-w-5xl mx-auto space-y-8">
-        <div className="bg-gradient-to-r from-slate-950 via-slate-900 to-indigo-950 border border-slate-800 rounded-3xl p-6 sm:p-8 space-y-4 shadow-xl">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-bold border border-blue-500/30">
-            <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+    <div className="bg-white min-h-screen text-slate-900 py-8 px-4 space-y-8 pb-20 lg:pb-10">
+      <div className="max-w-4xl mx-auto space-y-8">
+        <div className="bg-blue-50 border border-blue-100 rounded-2xl p-6 sm:p-8 space-y-3 shadow-xs">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-600 text-white text-xs font-bold">
+            <Sparkles className="w-3.5 h-3.5 text-yellow-300" />
             <span>실시간 자동 시뮬레이션</span>
           </div>
-          <h1 className="text-2xl sm:text-4xl font-black text-white">
+          <h1 className="text-2xl sm:text-4xl font-black text-slate-900">
             통신비 미환급금 3초 예상 자동 계산기
           </h1>
-          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-3xl">
+          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-3xl">
             해지 횟수, 이중출금 경험, 단말기 보증금 여부를 선택하고 내가 받을 수 있는 예상 미환급금을 즉시 산출해보세요.
           </p>
 
@@ -33,7 +33,7 @@ export default function CalculatorPage() {
               href={TARGET_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-black text-sm rounded-xl shadow-lg transition-transform hover:scale-105"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-black text-sm rounded-xl shadow-md transition-transform hover:scale-105"
             >
               <span>실제 미환급금 1분 즉시 조회 ↗</span>
             </a>
