@@ -9,7 +9,6 @@ import FloatingMobileCta from '@/components/FloatingMobileCta';
 import {
   Sparkles,
   Search,
-  ArrowRight,
   ShieldCheck,
   Zap,
   Clock,
@@ -198,22 +197,6 @@ export default function Home() {
             <p>
               통신 채권의 상법상 소멸시효는 <strong>발생일로부터 5년</strong>입니다. 5년이 지나면 법적으로 통신사 수익으로 귀속될 수 있으므로, 과거 5년 이내 통신사를 해지하거나 변경한 적이 있다면 지금 즉시 조회해보셔야 합니다.
             </p>
-          </div>
-
-          {/* High Impact Direct CTA Banner */}
-          <div className="bg-blue-600 text-white rounded-xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4 mt-6 shadow-sm">
-            <div className="space-y-1 text-center sm:text-left">
-              <strong className="text-white text-base block font-black">내 잊혀진 통신비 미환급금 1분 조회</strong>
-              <span className="text-xs text-blue-100">방송통신위원회 공식 본인인증으로 즉시 입금 신청 가능</span>
-            </div>
-            <a
-              href={TARGET_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 bg-white text-blue-700 hover:bg-blue-50 font-black text-xs sm:text-sm rounded-lg shadow-sm shrink-0 transition-transform hover:scale-105"
-            >
-              미환급금 1분 조회하기 ↗
-            </a>
           </div>
         </article>
       </div>
