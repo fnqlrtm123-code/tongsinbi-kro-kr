@@ -167,7 +167,7 @@ export default function Home() {
               통신비 미환급금 통합 조회 상세 가이드 & 상법상 5년 소멸시효 규정
             </h2>
             <p className="text-xs text-slate-500 mt-1">
-              네이버웹문서 및 빙 검색 노출 기준 공식 안내 정보
+              방송통신위원회 미환급금 통합 조회 서비스 공식 안내
             </p>
           </div>
 
