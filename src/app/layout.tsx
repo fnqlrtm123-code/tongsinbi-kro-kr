@@ -68,6 +68,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://통신비환급금조회.kro.kr',
   },
+  verification: {
+    other: {
+      'naver-site-verification': 'accce1d4fc1ce79ab29f4ed8011b60b782710f41',
+      'msvalidate.01': '72FE2EED9E2A787ABAD7AC2E77CB6992',
+    },
+  },
 };
 
 export default function RootLayout({
@@ -92,6 +98,8 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <head>
+        <meta name="naver-site-verification" content="accce1d4fc1ce79ab29f4ed8011b60b782710f41" />
+        <meta name="msvalidate.01" content="72FE2EED9E2A787ABAD7AC2E77CB6992" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
