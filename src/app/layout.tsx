@@ -6,11 +6,11 @@ import Footer from '@/components/Footer';
 export const metadata: Metadata = {
   metadataBase: new URL('https://통신비환급금조회.kro.kr'),
   title: {
-    default: '통신비 환급금 조회 | 미환급 통신비 1분 통합조회 센터',
-    template: '%s | 통신비환급금조회',
+    default: '통신비 환급금 조회 - 미환급 통신비 1분 통합조회 센터',
+    template: '%s - 통신비환급금조회',
   },
   description:
-    '통신비 미환급금 조회 및 환급 신청 종합 안내 포털. SKT, KT, LGU+, 알뜰폰 해지 후 이중납부 요금, 단말기 보증금, 과오납금 1분 자동 조회 및 본인 계좌 환급 방법 안내.',
+    '통신비 미환급금 조회 및 환급 신청 안내. SKT, KT, LGU+, 알뜰폰 이중납부 요금, 단말기 보증금, 과오납금 1분 자동 조회 및 환급 방법 안내.',
   keywords: [
     '통신비환급금조회',
     '통신비 미환급금',
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
     telephone: true,
   },
   openGraph: {
-    title: '통신비 환급금 조회 | 미환급 통신비 1분 통합조회 센터',
+    title: '통신비 환급금 조회 - 미환급 통신비 1분 통합조회 센터',
     description:
-      'SKT, KT, LGU+, 알뜰폰 미환급금, 이중납부 요금, 단말기 보증금 환급 신청 및 복지 감면 혜택 통합 안내.',
+      '통신비 미환급금 조회 및 환급 신청 안내. SKT, KT, LGU+, 알뜰폰 이중납부 요금, 단말기 보증금, 과오납금 1분 자동 조회 및 환급 방법 안내.',
     url: 'https://통신비환급금조회.kro.kr',
     siteName: '통신비미환급금조회 포털 센터',
     images: [
